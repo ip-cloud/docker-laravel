@@ -16,5 +16,6 @@ EXPOSE 80
 EXPOSE 443
 
 ONBUILD COPY . /var/www/laravel/
+ONBUILD RUN /bin/chown www-data:www-data -R /var/www/laravel/
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
