@@ -15,4 +15,6 @@ RUN /bin/mv composer.phar /usr/local/bin/composer
 EXPOSE 80
 EXPOSE 443
 
+ONBUILD COPY . /var/www/laravel/
+
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
